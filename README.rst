@@ -1,9 +1,9 @@
 Pianoputer.js
 =============
 
-The pianoputer allows you to play piano pieces on your computer keyboard, `like in this video<https://www.youtube.com/watch?v=z410eauCnHc>`_.
+The pianoputer allows you to play piano pieces on your computer keyboard, `like in this video <https://www.youtube.com/watch?v=z410eauCnHc>`_.
 
-In the video I use the `Python version<https://github.com/Zulko/pianoputer>` of the program, which works great, but not anyone wants to deal with Python. This project is ab out a browser-based Javascript implementation of the pianoputer.
+In the video I use the `Python version <https://github.com/Zulko/pianoputer>`_ of the program, which works great, but not anyone wants to deal with Python. This project is ab out a browser-based Javascript implementation of the pianoputer.
 
 For now it *works* on Google Chrome, for QWERTY layouts, but it's still far from perfect, I am not a JS guru, at all. Anyone who wants to improve the program is most welcome. The key features I have in mind are:
 
@@ -20,5 +20,6 @@ To get a new keyboard configuration (which is basically a list of the codes of t
 Licence
 ========
 
-Pianoputer.js - Copyleft 2014 by Zulko
+Pianoputer.js - Copyleft 2014 by Zulko.
+
 The file "Riffwave.js" is copyleft by Pedro Ladaria (see copyright notice in the file).
