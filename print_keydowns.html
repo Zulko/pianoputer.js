@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+    var list = []
+    function GetChar (event){
+      var keyCode = ('which' in event) ? event.which : event.keyCode;
+      list.push(keyCode)
+      document.getElementById("there").innerHTML = list;
+        }
+    </script>
+</head>
+<body>
+    <input size="40" value="Write a character into this field!" onkeydown="GetChar (event);"/>
+
+
+
+    <p id="there"> </p>
+</body>
+</html>

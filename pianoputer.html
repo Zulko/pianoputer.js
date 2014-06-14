@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<script src="riffwave.js"></script>
+<script src="sound_synthesis.js"></script>
+<script src="kb_confs.js"></script>
+<head>
+<script type="text/javascript">
+
+Array.prototype.contains = function(obj) {
+    var i = this.length;
+    while (i--) {
+        if (this[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+
+KB_CONF = KB_QWERTY_CHROME;
+var mapper = new Array();
+var isplaying = new Array();
+N_NOTES = KB_CONF.length;
+for (var i=0; i<N_NOTES; i++) {
+  mapper[KB_CONF[i]] = pitch_to_audio(i, fun_sine3);
+  isplaying[KB_CONF[i]] = false
+}
+
+
+function get_keyCode(event){
+  return (('which' in event) ? event.which : event.keyCode);
+}
+
+function keypress(event){
+  keyCode = get_keyCode(event);
+
+  if (KB_CONF.contains(keyCode)) {
+    if (!isplaying[keyCode]) {
+      isplaying[keyCode] = true ;
+      play_audio(mapper[keyCode]);
+    }
+  }
+}
+
+function keyup(event){
+  keyCode = get_keyCode(event);
+  if (KB_CONF.contains(keyCode)) {
+    if (isplaying[keyCode]) {
+      isplaying[keyCode] = false ;
+      stop_audio(mapper[keyCode]);
+      document.getElementById("debug").innerHTML = keyCode
+    }
+  }
+}
+
+</script>
+</head>
+<body onkeydown="keypress(event);"
+    onkeyup="keyup(event)">
+  <p id="debug"> </p>
+</body>
+</html>
